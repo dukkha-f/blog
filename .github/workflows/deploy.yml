@@ -1,4 +1,4 @@
-name: Deploy to Tencent CloudBase
+name: Deploy to Aliyub OSS
 
 on: push
 
@@ -23,11 +23,13 @@ jobs:
       - name: Generate
         run: ./node_modules/.bin/hexo generate
       # Deploy static to Tencent CloudBase
-      - name: Deploy static to Tencent CloudBase
+      - name: Setup Aliyun OSS Env
         id: deployStatic
-        uses: TencentCloudBase/cloudbase-action@v1.1.1
+        uses: manyuanrong/setup-ossutil@v2.0
         with:
-          secretId: ${{ secrets.SECRET_ID }}
-          secretKey: ${{ secrets.SECRET_KEY }}
-          envId: ${{ secrets.ENV_ID }}
-          staticSrcPath: public
+          endpoint: "oss-cn-shanghai.aliyuncs.com"
+          access-key-id: ${{ secrets.ACCESS_KEY }}
+          access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
+      
+      - name: Deploy To OSS
+        run: ossutil cp -rf public oss://dukkha-blog/
