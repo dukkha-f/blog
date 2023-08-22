@@ -2,6 +2,7 @@
 title: Android P 静默安装
 date: 2019-07-22 14:00:00
 tags: [Android]
+category: [码农]
 ---
 此前低版本静默安装一般分为两种套路：
 

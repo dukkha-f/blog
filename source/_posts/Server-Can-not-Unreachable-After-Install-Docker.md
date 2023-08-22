@@ -2,6 +2,7 @@
 title: 安装 Docker 后服务器 ping 不通了
 date: 2019-10-10 19:40:00
 tags: [Docker]
+category: 瞎折腾
 ---
 # 背景
 
