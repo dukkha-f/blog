@@ -1,0 +1,50 @@
+- class_name: 开启创造力
+  creativity_list:
+    - name: Java
+      color: "#fff"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-java.jpg
+    - name: Docker
+      color: "#57b6e6"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-docker.png
+    - name: Photoshop
+      color: "#4082c3"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-photoshop.png
+    - name: Node
+      color: "#333"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-node.svg
+    - name: Webpack
+      color: "#2e3a41"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-webpack.png
+    - name: Pinia
+      color: "#fff"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-pinia.svg
+    - name: Python
+      color: "#fff"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-python.png
+    - name: Vite
+      color: "#937df7"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-vite.svg
+    - name: Flutter
+      color: "#4499e4"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-flutter.png
+    - name: Vue
+      color: "#b8f0ae"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-vue.png
+    - name: React
+      color: "#222"
+      icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K
+    - name: CSS3
+      color: "#2c51db"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-css3.png
+    - name: JS
+      color: "#f7cb4f"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-js.png
+    - name: HTML
+      color: "#e9572b"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-html.png
+    - name: Git
+      color: "#df5b40"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-git.webp
+    - name: Apifox
+      color: "#e65164"
+      icon: https://cdn.fxcdev.com/blog-assets/skill-icon/skill-apifox.png
