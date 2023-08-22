@@ -1,6 +1,10 @@
 ---
 title: About
 date: 2022-05-06 17:46:31
+aside: false
+top_img: false
+background: "#f8f9fe"
+type: "about"
 ---
 
 Hey There, I'm Toner, Based in Xi'an, China. Just Another Coder. Working at Nova and previously at CVTE, TCL. And know a little about photography. But just too little to be called full-stack.

@@ -3,4 +3,4 @@
 	url = git@github.com:T-Oner/hexo-theme-cactus.git
 [submodule "themes/anzhiyu"]
 	path = themes/anzhiyu
-	url = https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git
+	url = git@github.com:dukkha-f/hexo-theme-anzhiyu.git
