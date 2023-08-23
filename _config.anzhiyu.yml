@@ -31,6 +31,10 @@ nav:
         - name: 博客
           link: https://blog.fxcdev.com/
           icon: /img/favicon.ico
+      item:
+        - name: Wiki
+          link: https://docs.fxcdev.com/
+          icon: /img/favicon.ico
     - title: 项目
       item:
         - name: Timez App
