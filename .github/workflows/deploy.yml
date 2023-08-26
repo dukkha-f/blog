@@ -32,4 +32,4 @@ jobs:
           access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
       
       - name: Deploy To OSS
-        run: ossutil cp -rf public oss://dukkha-blog/
+        run: ossutil cp -rf public oss://anatta-blog/
