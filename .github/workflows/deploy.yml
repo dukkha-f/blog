@@ -5,7 +5,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Deploy Hexo Souce Repo to Tencent CloudBase
+    name: Deploy Hexo Souce Repo to Aliyun OSS
     steps:
       - name: Checkout
         uses: actions/checkout@v2
