@@ -22,9 +22,9 @@ menu:
 
 # nav相关配置
 nav:
-  enable: trye
-  travelling: true
-  clock: true
+  enable: true
+  travelling: false
+  clock: false
   menu:
     - title: 网站
       item:
@@ -108,46 +108,10 @@ algolia_search:
 # Settings: https://www.algolia.com/
 docsearch:
   enable: false
-  appId:  # see email
-  apiKey:  # see email
-  indexName:  # see email
+  appId: # see email
+  apiKey: # see email
+  indexName: # see email
   option:
-    placeholder: 'Ctrl/⌘ + K 唤醒搜索服务'
-    maxResultsPerGroup: 7
-    translations:
-      button:
-        buttonText: '搜索'
-        buttonAriaLabel: '搜索'
-      modal:
-        searchBox:
-          resetButtonTitle: '清空'
-          resetButtonAriaLabel: '清空'
-          cancelButtonText: '取消'
-          cancelButtonAriaLabel: '取消'
-        startScreen:
-          recentSearchesTitle: '最近搜索历史'
-          noRecentSearchesText: '搜索历史为空'
-          saveRecentSearchButtonTitle: '保存搜索记录'
-          removeRecentSearchButtonTitle: '清除搜索记录'
-          favoriteSearchesTitle: '收藏夹'
-          removeFavoriteSearchButtonTitle: '移出收藏夹'
-        errorScreen:
-          titleText: '未能获取搜索结果'
-          helpText: '您可能需要检查您的网络连接'
-        footer:
-          selectText: '选择'
-          selectKeyAriaLabel: '回车键'
-          navigateText: '切换'
-          navigateUpKeyAriaLabel: '方向键上'
-          navigateDownKeyAriaLabel: '方向键下'
-          closeText: '关闭'
-          closeKeyAriaLabel: '退出键'
-          searchByText: '搜索服务提供: DocSearch by'
-        noResultsScreen:
-          noResultsText: '未搜索到相关内容'
-          suggestedQueryText: '您可尝试搜索'
-          reportMissingResultsText: '确认搜索结果是正确的？'
-          reportMissingResultsLinkText: '反馈给Algolia'
 
 # Local search
 local_search:
@@ -234,7 +198,7 @@ post_meta:
 # 主色调相关配置
 mainTone:
   enable: false # true or false 文章是否启用获取图片主色调
-  mode: api # cdn/api/both cdn模式为图片url+imageAve参数获取主色调，api模式为请求API获取主色调，both模式会先请求cdn参数，无法获取的情况下将请求API获取
+  mode: api # cdn/api/both cdn模式为图片url+imageAve参数获取主色调，api模式为请求API获取主色调，both模式会先请求cdn参数，无法获取的情况下将请求API获取，可以在文章内配置main_color: '#3e5658'，使用十六进制颜色，则不会请求both/cdn/api获取主色调，而是直接使用配置的颜色
   # 项目地址：https://github.com/anzhiyu-c/img2color-go
   api: https://img2color-go.vercel.app/api?img= # mode为api时可填写
   cover_change: true # 整篇文章跟随cover修改主色调
@@ -317,9 +281,11 @@ related_post:
 photofigcaption: false
 
 # post_pagination (分页)
-# value: 1 || 2 || false
+# value: 1 || 2 || 3 || 4 || false
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
+# 3: 只有下一篇，并且只在文章滚动到评论区时显示下一篇文章(旧文章)
+# 4: 只有下一篇，并且只在文章滚动到评论区时显示下一篇文章(旧文章) 显示图片cover
 # false: disable pagination
 post_pagination: 2
 
@@ -393,66 +359,8 @@ waline:
   pageview: false
   meta: true # 归属地, 操作系统 前是否显示图标
   imageUploader: true # 是否启用图片上传功能，默认开启，限制为 128kb 的 base64 图片
-  # 如果你需要启用自定义图片上传方式，请注释上方默认行为，取消下方注释，自行编写函数
-  # 并根据实际上传方式进行参数调整，以下为示例 注意 imageUploader: > 参数中的 > 不可删除
-  # imageUploader: >
-  #   function (file) {
-  #     let formData = new FormData();
-  #     let headers = new Headers();
-  #     formData.append("file", file);
-  #     formData.append("album_id", "10");
-  #     formData.append("permission", "0");
-  #     headers.append("Authorization", "Bearer 你的Token");
-  #     headers.append("Accept", "application/json");
-  #     return fetch("你的 API 上传地址", {
-  #       method: "POST",
-  #       headers: headers,
-  #       body: formData,
-  #     })
-  #       .then((resp) => resp.json())
-  #       .then((resp) => resp.data.links.url);
-  #   }
-
   # 以下为可选配置，后续若有新增/修改配置参数可在此自行添加/修改
   option:
-    pageSize: 10
-    requiredMeta: ["nick", "mail"]
-    login: enable
-    copyright: true
-    # turnstileKey: 
-    locale:
-      admin: 安知鱼
-      sofa: 欢迎使用 安知鱼 主题！
-      placeholder: "生活明朗，万物可爱"
-    #   reactionTitle: 就现在，表明你的态度！
-    #   reaction0: 0
-    #   reaction1: 1
-    #   reaction2: 2
-    #   reaction3: 3
-    #   reaction4: 4
-    #   reaction5: 5
-    #   level0: 0
-    #   level1: 1
-    #   level2: 2
-    #   level3: 3
-    #   level4: 4
-    #   level5: 5
-    #   level6: 6
-    #   level7: ...
-    # emoji:
-    #   [
-    #     "https://example.com/.../Sticker-100/",
-    #   ]
-    # reaction:
-    #   [
-    #     "https://example.com/.../Sticker-100/0.png",
-    #     "https://example.com/.../Sticker-100/1.png",
-    #     "https://example.com/.../Sticker-100/2.png",
-    #     "https://example.com/.../Sticker-100/3.png",
-    #     "https://example.com/.../Sticker-100/4.png",
-    #     "https://example.com/.../Sticker-100/5.png",
-    #   ]
-
 
 # Twikoo
 # https://github.com/imaegoo/twikoo
@@ -571,14 +479,14 @@ footer:
     enable: false
     randomFriends: 3
     project:
-      - title: 服务
-        links:
-          - title: 51la统计
-            link: https://v6.51.la/
-          - title: 十年之约
-            link: https://www.foreverblog.cn/
-          - title: 开往
-            link: https://github.com/travellings-link/travellings
+      # - title: 服务
+      #   links:
+      #     - title: 51la统计
+      #       link: https://v6.51.la/
+      #     - title: 十年之约
+      #       link: https://www.foreverblog.cn/
+      #     - title: 开往
+      #       link: https://github.com/travellings-link/travellings
       # - title: 主题
       #   links:
       #     - title: 文档
@@ -606,7 +514,7 @@ footer:
   footerBar:
     enable: true
     authorLink: /
-    cc: 
+    cc:
       enable: false
       link: /copyright
     linkList:
@@ -696,9 +604,9 @@ site_verification:
 
 theme_color:
   enable: true
-  main: "#3b70fc"
+  main: "#425AEF"
   dark_main: "#f2b94b"
-  paginator: "#3b70fc"
+  paginator: "#425AEF"
   #   button_hover: "#FF7242"
   text_selection: "#2128bd"
   link_color: "var(--anzhiyu-fontcolor)"
@@ -706,21 +614,23 @@ theme_color:
   hr_color: "#4259ef23"
   code_foreground: "#fff"
   code_background: "var(--anzhiyu-code-stress)"
-  toc_color: "#3b70fc"
-  #   blockquote_padding_color: "#3b70fc"
-  #   blockquote_background_color: "#3b70fc"
+  toc_color: "#425AEF"
+  #   blockquote_padding_color: "#425AEF"
+  #   blockquote_background_color: "#425AEF"
   scrollbar_color: "var(--anzhiyu-scrollbar)"
   meta_theme_color_light: "#f7f9fe"
   meta_theme_color_dark: "#18171d"
 
-# 移动端侧栏 @since 1.5.4
+# 移动端侧栏
 sidebar:
-  avatar: true
-  archive: true
-  tag: true
-  category: true
+  site_data:
+    archive: true
+    tag: true
+    category: true
   menus_items: true
   tags_cloud: true
+  display_mode: true
+  nav_menu_project: true
 
 # 文章h2添加分隔线
 h2Divider: false
@@ -871,7 +781,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://cdn.fxcdev.com/blog-assets/avatar.jpg
+  avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg # 自定加载动画义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -890,7 +800,7 @@ aside:
     enable: true
     description: # <div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div> # 默认为站点描述
     name_link: /
-  
+
   card_announcement:
     enable: false
     content: 欢迎来看我的博客鸭~
@@ -977,7 +887,23 @@ translate:
 readmode: true
 
 # 中控台
-centerConsole: true
+centerConsole:
+  enable: true
+  card_tags:
+    enable: true
+    limit: 40 # if set 0 will show all
+    color: false
+    sort_order: # Don't modify the setting unless you know how it works
+    highlightTags:
+      # - Hexo
+      # - 前端
+  card_archives:
+    enable: true
+    type: monthly # yearly or monthly
+    format: MMMM YYYY # eg: YYYY年MM月
+    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
+    limit: 8 # if set 0 will show all
+    sort_order: # Don't modify the setting unless you know how it works
 
 # dark mode
 darkmode:
@@ -1067,7 +993,7 @@ aplayerInject:
 snackbar:
   enable: true
   position: top-center
-  bg_light: "#3b70fc" # The background color of Toast Notification in light mode
+  bg_light: "#425AEF" # The background color of Toast Notification in light mode
   bg_dark: "#1f1f1f" # The background color of Toast Notification in dark mode
 
 # https://instant.page/
@@ -1149,9 +1075,10 @@ friends_vue:
   enable: false
   vue_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.1/friends/index.4f887d95.js
   apiurl: # 朋友圈后端地址
+  top_tips: 使用 友链朋友圈 订阅友链最新文章
   top_background:
 
-# 黑色模式粒子效果canvas
+# 深色模式粒子效果canvas
 universe:
   enable: true
 
@@ -1171,7 +1098,7 @@ LA:
 
 # 标签卖萌
 diytitle:
-  enable: false
+  enable: true
   leaveTitle: w(ﾟДﾟ)w 不要走！再看看嘛！
   backTitle: ♪(^∇^*)欢迎肥来！
 
@@ -1194,12 +1121,16 @@ nav_music:
   console_widescreen_music: false # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
   id: 8152976493
   server: netease
+  volume: 0.7 # 默认音量
   all_playlist: https://y.qq.com/n/ryqq/playlist/8802438608
+
+# 路径为 /music 的音乐页面默认加载的歌单 1. nav_music 2. custom
+music_page_default: nav_music
 
 # 评论匿名邮箱
 visitorMail:
   enable: true
-  mail: visitor@dukkha.com
+  mail: ""
 
 # ptool 文章底部工具
 ptool:
@@ -1212,34 +1143,33 @@ ptool:
 
 # 欢迎语配置
 greetingBox:
-  enable: false
+  enable: false #开启后必须配置下面的list对应的时间段，不然会出现小白条
   default: 晚上好👋
   list:
-    - greeting: 晚安😴
-      startTime: 0
-      endTime: 5
-    - greeting: 早上好鸭👋, 祝你一天好心情！
-      startTime: 6
-      endTime: 9
-    - greeting: 上午好👋, 状态很好，鼓励一下～
-      startTime: 10
-      endTime: 10
-    - greeting: 11点多啦, 在坚持一下就吃饭啦～
-      startTime: 11
-      endTime: 11
-    - greeting: 午安👋, 宝贝
-      startTime: 12
-      endTime: 14
-    - greeting: 🌈充实的一天辛苦啦！
-      startTime: 14
-      endTime: 18
-    - greeting: 19点喽, 奖励一顿丰盛的大餐吧🍔。
-      startTime: 19
-      endTime: 19
-    - greeting: 晚上好👋, 在属于自己的时间好好放松😌~
-      startTime: 20
-      endTime: 24
-
+    # - greeting: 晚安😴
+    #   startTime: 0
+    #   endTime: 5
+    # - greeting: 早上好鸭👋, 祝你一天好心情！
+    #   startTime: 6
+    #   endTime: 9
+    # - greeting: 上午好👋, 状态很好，鼓励一下～
+    #   startTime: 10
+    #   endTime: 10
+    # - greeting: 11点多啦, 在坚持一下就吃饭啦～
+    #   startTime: 11
+    #   endTime: 11
+    # - greeting: 午安👋, 宝贝
+    #   startTime: 12
+    #   endTime: 14
+    # - greeting: 🌈充实的一天辛苦啦！
+    #   startTime: 14
+    #   endTime: 18
+    # - greeting: 19点喽, 奖励一顿丰盛的大餐吧🍔。
+    #   startTime: 19
+    #   endTime: 19
+    # - greeting: 晚上好👋, 在属于自己的时间好好放松😌~
+    #   startTime: 20
+    #   endTime: 24
 
 # 文章顶部ai摘要
 post_head_ai_description:
@@ -1264,17 +1194,34 @@ accesskey:
   enable: true
 
 # 友情链接顶部相关配置
-linkPageTop: 
+linkPageTop:
   enable: false
   title: 与数百名博主无限进步
+  # 添加博主友链的评论自定义格式
+  addFriendPlaceholder: "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"
 
 # 缩略图后缀 archive/tag/category 页面单独开启后缀
-pageThumbnailSuffix: ''
+pageThumbnailSuffix: ""
 
 # 隐私协议弹窗
 agreementPopup:
   enable: false
   url: /privacy
+
+# 右键菜单
+rightClickMenu:
+  enable: false
+
+# 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
+peoplecanvas:
+  enable: true
+  img: https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png
+
+# 动效
+dynamicEffect:
+  postTopWave: true # 文章顶部波浪效果
+  postTopRollZoomInfo: false # 文章顶部滚动时缩放
+  pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
@@ -1293,12 +1240,12 @@ inject:
 # 非必要请不要修改
 CDN:
   # The CDN provider of internal scripts (主题内部 js 的 cdn 配置)
-  # option: local/elemecdn/jsdelivr/unpkg/cdnjs/onmicrosoft/cbd/custom
+  # option: local/elemecdn/jsdelivr/unpkg/cdnjs/onmicrosoft/cbd/anheyu/custom
   # Dev version can only choose. ( dev版的主题只能设置为 local )
   internal_provider: local
 
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
-  # option: elemecdn/jsdelivr/unpkg/cdnjs/onmicrosoft/cbd/custom
+  # option: elemecdn/jsdelivr/unpkg/cdnjs/onmicrosoft/cbd/anheyu/custom
   third_party_provider: cbd
 
   # Add version number to CDN, true or false
@@ -1313,10 +1260,17 @@ CDN:
     # main:
     # utils:
     # translate:
+    # random_friends_post_js:
+    # right_click_menu_js:
+    # comment_barrage_js:
+    # ai_abstract_js:
+    # people_js:
     # local_search:
     # algolia_js:
     # algolia_search:
     # instantsearch:
+    # docsearch_js:
+    # docsearch_css:
     # pjax:
     # blueimp_md5:
     # valine:
